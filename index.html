@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <!--
+    Target Device: iPad Pro 12.9" (6th gen)
+    Portrait: 1024 x 1366
+    Landscape: 1366 x 1024
+    Canvas sizing is fixed in css/main.css (.app-root, :root custom properties).
+  -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no"
+  />
+  <meta name="theme-color" content="#050508" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Shingrix — Quiz</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <!--
+    GitHub Pages: 저장소 Settings → Pages → Build and deployment
+    Source: Deploy from a branch → Branch: main, Folder: / (root)
+    이렇게 두면 main에 push할 때마다 사이트가 갱신됩니다.
+  -->
+</head>
+<body>
+  <div class="app-root" id="app">
+    <div class="page page-home" aria-label="페이지 1" >
+      <div class="wrapper">
+        <div class="image-wrap"><img src="images/page1.png" alt="첫 페이지"></div>
+        <button id="moveToQuiz1" class="btn" aria-label="당뇨병 환자 이동"></button>
+        <button id="moveToQuiz2" class="btn" aria-label="순환기 질환 환자 이동"></button>
+        <button id="moveToQuiz3" class="btn" aria-label="콩팥병 환자 이동"></button>
+        <button id="moveToQuiz4" class="btn" aria-label="대상포진 예방효과 이동"></button>
+        <button id="moveToQuiz5" class="btn" aria-label="싱그릭스 접종 권유 이동"></button>
+      </div>
+    </div>
+    <div class="page page-quiz page-quiz-1" aria-label="퀴즈1" hidden>
+      <div class="wrapper">
+        <div class="image-wrap"><img src="images/quiz1.png" alt="퀴즈 화면"></div>
+        <button class="quiz-btn quiz-btn-1" data-choice="1" aria-label="1">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-1.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-2" data-choice="2" aria-label="2">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-2.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-3" data-choice="3" aria-label="3">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-3.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-4" data-choice="4" aria-label="4">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-4.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-5" data-choice="5" aria-label="5">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-5.png" aria-label="활성화"></span>
+        </button>
+
+        <button class="quiz-submit-btn" aria-label="확인"><img src="images/btn-submit.png" alt="확인"></button>
+
+        <button class="btn btn-page-home move-to-page1" aria-label="처음 페이지로 이동"></button>
+      </div>
+    </div>
+
+    <div class="page page-quiz page-quiz-2" aria-label="퀴즈2" hidden>
+      <div class="wrapper">
+        <div class="image-wrap"><img src="images/quiz2.png" alt="퀴즈 화면"></div>
+        <button class="quiz-btn quiz-btn-1" data-choice="1" aria-label="1">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-1.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-2" data-choice="2" aria-label="2">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-2.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-3" data-choice="3" aria-label="3">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-3.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-4" data-choice="4" aria-label="4">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-2-4.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-5" data-choice="5" aria-label="5">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-5.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-submit-btn" aria-label="확인"><img src="images/btn-submit.png" alt="확인"></button>
+        <button class="btn btn-page-home move-to-page1" aria-label="처음 페이지로 이동"></button>
+      </div>
+    </div>
+
+    <div class="page page-quiz page-quiz-3" aria-label="퀴즈3" hidden>
+      <div class="wrapper">
+        <div class="image-wrap"><img src="images/quiz3.png" alt="퀴즈 화면"></div>
+        <button class="quiz-btn quiz-btn-1" data-choice="1" aria-label="1">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-1.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-2" data-choice="2" aria-label="2">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-2.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-3" data-choice="3" aria-label="3">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-4.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-4" data-choice="4" aria-label="4">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-1-5.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-5" data-choice="5" aria-label="5">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-3-5.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-submit-btn" aria-label="확인"><img src="images/btn-submit.png" alt="확인"></button>
+
+        <button class="btn btn-page-home move-to-page1" aria-label="처음 페이지로 이동"></button>
+      </div>
+    </div>
+
+    <div class="page page-quiz page-quiz-4" aria-label="퀴즈4" hidden>
+      <div class="wrapper">
+        <div class="image-wrap"><img src="images/quiz4.png" alt="퀴즈 화면"></div>
+        <button class="quiz-btn quiz-btn-1" data-choice="1" aria-label="1">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-4-1.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-2" data-choice="2" aria-label="2">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-4-2.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-3" data-choice="3" aria-label="3">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-4-3.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-4" data-choice="4" aria-label="4">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-4-4.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-submit-btn" aria-label="확인"><img src="images/btn-submit.png" alt="확인"></button>
+        <button class="btn btn-page-home move-to-page1" aria-label="처음 페이지로 이동"></button>
+      </div>
+    </div>
+
+    <div class="page page-quiz page-quiz-5" aria-label="퀴즈5" hidden>
+      <div class="wrapper">
+        <div class="image-wrap"><img src="images/quiz5.png" alt="퀴즈 화면"></div>
+        <button class="quiz-btn quiz-btn-1" data-choice="1" aria-label="1">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-5-1.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-2" data-choice="2" aria-label="2">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-5-2.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-3" data-choice="3" aria-label="3">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-5-3.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-4" data-choice="4" aria-label="4">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-5-4.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-btn quiz-btn-5" data-choice="5" aria-label="5">
+          <span class="quiz-btn-active"><img src="images/quiz-btn-5-5.png" aria-label="활성화"></span>
+        </button>
+        <button class="quiz-submit-btn" aria-label="확인"><img src="images/btn-submit.png" alt="확인"></button>
+        <button class="btn btn-page-home move-to-page1" aria-label="처음 페이지로 이동"></button>
+      </div>
+    </div>
+    <div class="page page-end" aria-label="마지막">
+      <div class="wrapper">
+        <div class="image-wrap"><img src="images/end.png" alt="마지막 페이지"></div>
+        <button class="move-to-page1" aria-label="처음 페이지로 이동"></button>
+      </div>
+    </div>
+
+    <div
+      id="lightbox"
+      class="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-label="이미지 확대"
+    >
+      <button type="button" class="lightbox__backdrop" id="lightboxBackdrop" aria-label="닫기"></button>
+      <div class="lightbox__panel">
+        <button type="button" class="lightbox__close" id="lightboxClose" aria-label="닫기"></button>
+        <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+      </div>
+    </div>
+  </div>
+ 
+
+  <script>
+    (function () {
+      var PAGE_HOME = "home";
+      var PAGE_QUIZ = "quiz";
+      var PAGE_END = "end";
+      var currentPage = PAGE_HOME;
+      var currentQuizId = null;
+      var shouldMoveToEndOnClose = false;
+      var QUIZZES = [
+        { id: 1, image: "images/quiz1.png", answer: "4", correctPopup: "images/quiz1-ok.png", wrongPopup: "images/quiz1-ng.png" },
+        { id: 2, image: "images/quiz2.png", answer: "4", correctPopup: "images/quiz2-ok.png", wrongPopup: "images/quiz2-ng.png" },
+        { id: 3, image: "images/quiz3.png", answer: "5", correctPopup: "images/quiz3-ok.png", wrongPopup: "images/quiz3-ng.png" },
+        { id: 4, image: "images/quiz4.png", answer: "4", correctPopup: "images/quiz4-ok.png", wrongPopup: "images/quiz4-ng.png" },
+        { id: 5, image: "images/quiz5.png", answer: "1", correctPopup: "images/quiz5-ok.png", wrongPopup: "images/quiz5-ok.png" },
+      ];
+
+      var homePage = document.querySelector(".page-home");
+      var quizPages = document.querySelectorAll(".page.page-quiz");
+      var endPage = document.querySelector(".page-end");
+      var activeQuizPage = null;
+      var quizImage = null;
+      var quizChoiceButtons = [];
+      var quizSubmitBtn = null;
+      var selectedChoice = null;
+
+      function setActiveQuizPage(pageEl) {
+        activeQuizPage = pageEl;
+        if (!pageEl) {
+          quizImage = null;
+          quizChoiceButtons = [];
+          quizSubmitBtn = null;
+          return;
+        }
+        quizImage = pageEl.querySelector(".image-wrap img");
+        quizChoiceButtons = pageEl.querySelectorAll(".quiz-btn");
+        quizSubmitBtn = pageEl.querySelector(".quiz-submit-btn");
+      }
+
+      function showPage(page) {
+        currentPage = page;
+        if (homePage) homePage.hidden = page !== PAGE_HOME;
+        quizPages.forEach(function (el) {
+          el.hidden = page !== PAGE_QUIZ || el !== activeQuizPage;
+        });
+        if (endPage) endPage.hidden = page !== PAGE_END;
+      }
+
+      function getQuizById(id) {
+        return QUIZZES.find(function (quiz) { return quiz.id === id; }) || null;
+      }
+
+      function loadQuiz(id) {
+        var quiz = getQuizById(id);
+        if (!quiz) return;
+        var pageEl = quizPages[quiz.id - 1];
+        if (!pageEl) return;
+        quizPages.forEach(function (p) {
+          p.querySelectorAll(".quiz-btn").forEach(function (btn) {
+            btn.classList.remove("is-selected");
+          });
+          var sub = p.querySelector(".quiz-submit-btn");
+          if (sub) sub.classList.remove("is-visible");
+        });
+        setActiveQuizPage(pageEl);
+        currentQuizId = quiz.id;
+        selectedChoice = null;
+        if (quizImage) {
+          quizImage.src = quiz.image;
+        }
+        showPage(PAGE_QUIZ);
+      }
+
+      function submitQuiz(choice) {
+        var quiz = getQuizById(currentQuizId);
+        if (!quiz) return false;
+        var isCorrect = quiz.answer === choice;
+        shouldMoveToEndOnClose = true;
+        openLightbox(isCorrect ? quiz.correctPopup : quiz.wrongPopup);
+        return isCorrect;
+      }
+
+      function wireHomeButtons() {
+        ["moveToQuiz1", "moveToQuiz2", "moveToQuiz3", "moveToQuiz4", "moveToQuiz5"].forEach(function (id, idx) {
+          var btn = document.getElementById(id);
+          if (!btn) return;
+          btn.addEventListener("click", function () {
+            loadQuiz(idx + 1);
+          });
+        });
+      }
+
+      function wirePageButtons() {
+        document.querySelectorAll(".move-to-page1").forEach(function (moveToPage1Btn) {
+          moveToPage1Btn.addEventListener("click", function () {
+            showPage(PAGE_HOME);
+          });
+        });
+      }
+
+      function wireQuizPageButtons(pageEl) {
+        var choices = pageEl.querySelectorAll(".quiz-btn");
+        var submit = pageEl.querySelector(".quiz-submit-btn");
+        choices.forEach(function (button) {
+          button.addEventListener("click", function () {
+            if (pageEl !== activeQuizPage) return;
+            var choice = button.getAttribute("data-choice");
+            if (!choice) return;
+            if (selectedChoice === choice) return;
+            choices.forEach(function (btn) {
+              btn.classList.remove("is-selected");
+            });
+            button.classList.add("is-selected");
+            selectedChoice = choice;
+            if (submit) submit.classList.add("is-visible");
+          });
+        });
+        if (submit) {
+          submit.addEventListener("click", function () {
+            if (pageEl !== activeQuizPage) return;
+            if (!selectedChoice) return;
+            submitQuiz(selectedChoice);
+          });
+        }
+      }
+
+      var lb = document.getElementById("lightbox");
+      var lbImg = document.getElementById("lightboxImg");
+      var lbClose = document.getElementById("lightboxClose");
+      var lbBackdrop = document.getElementById("lightboxBackdrop");
+
+      function openLightbox(src) {
+        if (!src || !lb || !lbImg) return;
+        lbImg.src = src;
+        lb.classList.add("lightbox--open");
+        lb.setAttribute("aria-hidden", "false");
+      }
+
+      function closeLightbox() {
+        if (!lb || !lbImg) return;
+        lb.classList.remove("lightbox--open");
+        lb.setAttribute("aria-hidden", "true");
+        window.setTimeout(function () {
+          lbImg.removeAttribute("src");
+        }, 400);
+
+        if (shouldMoveToEndOnClose) {
+          shouldMoveToEndOnClose = false;
+          showPage(PAGE_END);
+        }
+      }
+
+      document.querySelectorAll("button[data-popup]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var src = btn.getAttribute("data-popup");
+          openLightbox(src);
+        });
+      });
+
+      if (lbClose) lbClose.addEventListener("click", closeLightbox);
+      if (lbBackdrop) lbBackdrop.addEventListener("click", closeLightbox);
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeLightbox();
+      });
+
+      wireHomeButtons();
+      wirePageButtons();
+      quizPages.forEach(function (pageEl) {
+        wireQuizPageButtons(pageEl);
+      });
+      showPage(PAGE_HOME);
+    })();
+  </script>
+</body>
+</html>
