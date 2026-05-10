@@ -137,7 +137,7 @@ body {
 
 .lightbox__close {
   position: absolute;
-  top: 19.5%;
+  top: 23.5%;
   right: 6%;
   width: 4%;
   aspect-ratio: 1/1;
@@ -146,6 +146,10 @@ body {
   border-radius: 50%;
   cursor: pointer;
   z-index: 2;
+}
+
+.page-quiz-5:not(hidden) .lightbox__close{
+  top: 19.5%;
 }
 
 /*
